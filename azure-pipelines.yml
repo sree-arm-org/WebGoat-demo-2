@@ -1,0 +1,16 @@
+trigger:
+- main
+
+resources:
+- repo: self
+
+steps:
+- task: AdvancedSecurity-Codeql-Init@1
+  inputs:
+    languages: 'javascript'
+    querysuite: 'code-scanning'
+    buildtype: 'None'
+
+- task: AdvancedSecurity-Dependency-Scanning@1
+
+- task: AdvancedSecurity-Codeql-Analyze@1
